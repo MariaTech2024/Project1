@@ -1,10 +1,2 @@
-# Ignore node_modules directory
-node_modules/
-
-# Ignore environment variable files
-.env
-
-# Ignore other files and directories
-.DS_Store
-npm-debug.log
-*.log
+/**node_modules
+.env */
