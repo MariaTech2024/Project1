@@ -1,0 +1,230 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Root variables for colors */
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #333;
+  --main-color: #3498db;
+  --income-color: #2ecc71;
+  --expense-color: #e74c3c;
+  --button-hover-color: #2980b9;
+  --delete-button-color: #e74c3c;
+  --delete-button-hover-color: #c0392b;
+}
+
+/* General reset and box-sizing */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header and main section styling */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+h3,
+header,
+ul {
+  margin-bottom: 1rem;
+}
+main {
+  max-width: 600px;
+  margin: 1rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+header {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+header div {
+  padding: 10px;
+}
+header div:first-child {
+  flex-basis: 100%;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+header div:nth-child(n + 2) {
+  flex-basis: 50%;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+header h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+form input:not(#type),
+form button {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  height: 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+form button {
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+form button:hover {
+  background-color: var(--button-hover-color);
+}
+form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+form div:nth-child(-n + 2) {
+  flex-basis: 100%;
+}
+form div:nth-child(n + 3) {
+  flex-basis: calc(50% - 10px);
+}
+input#type {
+  appearance: none;
+  position: absolute;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #c8e6f4;
+  border-radius: 5px;
+  position: relative;
+}
+.option span {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.option::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-color:#3498db;
+  height: calc(100% - 10px);
+  width: calc(50% - 10px);
+  transform: translateX(5px);
+  border-radius: inherit;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  transition: all 200ms;
+}
+input#type:checked ~ .option::before {
+  left: 50%;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 300ms;
+}
+ul li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.name {
+  flex: 1;
+}
+.name h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.name p {
+  font-size: 0.9rem;
+  color: #555;
+}
+.amount {
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.amount.income {
+  color: var(--income-color);
+  
+}
+.amount.expense {
+  color: var(--expense-color);
+ 
+}
+.action {
+  display: none;
+}
+ul li:hover .action {
+  display: flex;
+  align-items: center;
+}
+.action button {
+  background-color: var(--delete-button-color);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 700ms;
+  margin-left: auto;
+}
+.action button:hover {
+  background-color: var(--delete-button-hover-color);
+}
+#status {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--main-color);
+}
