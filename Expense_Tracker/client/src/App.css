@@ -28,18 +28,7 @@ body {
   color: var(--text-color);
 }
 
-/* Header and main section styling */
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--main-color);
-}
-h3,
-header,
-ul {
-  margin-bottom: 1rem;
-}
+/* Main container styling */
 main {
   max-width: 600px;
   margin: 1rem auto;
@@ -51,31 +40,10 @@ main {
 
 /* Header styling */
 header {
-  background-color: var(--main-color);
-  color: #fff;
-  padding: 1.5rem;
   text-align: center;
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-header div {
-  padding: 10px;
-}
-header div:first-child {
-  flex-basis: 100%;
-  font-size: 2.5rem;
-  font-weight: 600;
-}
-header div:nth-child(n + 2) {
-  flex-basis: 50%;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-header h5 {
   font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  color: var(--main-color);
+  border-radius: 10px;
 }
 
 /* Form styling */
@@ -84,6 +52,7 @@ form {
   flex-wrap: wrap;
   gap: 15px;
 }
+
 form input:not(#type),
 form button {
   width: 100%;
@@ -95,6 +64,7 @@ form button {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
+
 form button {
   background-color: var(--main-color);
   color: #fff;
@@ -105,24 +75,30 @@ form button {
   cursor: pointer;
   transition: background-color 300ms;
 }
+
 form button:hover {
   background-color: var(--button-hover-color);
 }
+
 form label {
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
 }
+
 form div:nth-child(-n + 2) {
   flex-basis: 100%;
 }
+
 form div:nth-child(n + 3) {
   flex-basis: calc(50% - 10px);
 }
+
 input#type {
   appearance: none;
   position: absolute;
 }
+
 .option {
   display: flex;
   align-items: center;
@@ -132,18 +108,20 @@ input#type {
   border-radius: 5px;
   position: relative;
 }
+
 .option span {
   width: 50%;
   text-align: center;
   cursor: pointer;
   z-index: 2;
 }
+
 .option::before {
   content: "";
   position: absolute;
   top: 5px;
   left: 0;
-  background-color:#3498db;
+  background-color: #3498db;
   height: calc(100% - 10px);
   width: calc(50% - 10px);
   transform: translateX(5px);
@@ -151,6 +129,7 @@ input#type {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
   transition: all 200ms;
 }
+
 input#type:checked ~ .option::before {
   left: 50%;
 }
@@ -158,7 +137,9 @@ input#type:checked ~ .option::before {
 /* List styling */
 ul {
   list-style-type: none;
+  margin-bottom: 1rem;
 }
+
 ul li {
   display: flex;
   justify-content: space-between;
@@ -170,42 +151,50 @@ ul li {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 300ms;
 }
+
 ul li:hover {
   background: rgba(0, 0, 0, 0.05);
 }
+
 .name {
   flex: 1;
 }
+
 .name h4 {
   font-size: 1.25rem;
   font-weight: 600;
   text-transform: capitalize;
 }
+
 .name p {
   font-size: 0.9rem;
   color: #555;
 }
+
 .amount {
   font-weight: 600;
   margin-right: 10px;
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 .amount.income {
   color: var(--income-color);
-  
 }
+
 .amount.expense {
   color: var(--expense-color);
- 
 }
+
 .action {
   display: none;
 }
+
 ul li:hover .action {
   display: flex;
   align-items: center;
 }
+
 .action button {
   background-color: var(--delete-button-color);
   color: #fff;
@@ -219,12 +208,81 @@ ul li:hover .action {
   transition: background-color 700ms;
   margin-left: auto;
 }
+
 .action button:hover {
   background-color: var(--delete-button-hover-color);
 }
+
 #status {
   text-align: center;
   margin-bottom: 1rem;
   font-size: 1.25rem;
+  color: var(--main-color);
+}
+
+/* Totals container styling */
+.totals-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color:#3498db;
+  color: #ffff;
+  border-radius: 5px;
+}
+
+.total-balance {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.total-balance h5 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.income h5,
+.expense h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+ 
+
+}
+
+.total-balance span,
+.income span,
+.expense span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.income-expense-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.income,
+.expense {
+  flex: 1;
+  text-align: center;
+}
+
+/* Additional styling for the container */
+.form-container {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   color: var(--main-color);
 }
